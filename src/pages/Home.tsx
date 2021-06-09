@@ -1,11 +1,20 @@
 import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import logo from '../assets/logo.svg';
+import filmsActions from '../store/actions/filmsActions';
 
-const Home = () => {
+
+interface IHomeScreenProps {
+  setLoading: Function
+}
+
+const Home = (props: IHomeScreenProps) => {
+
+  const dispatch = useDispatch()
 
   useEffect(() => {
-
+    dispatch(filmsActions.initializeStart())
   }, []);
 
 
